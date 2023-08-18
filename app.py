@@ -30,7 +30,7 @@ def predict():
         tokenizer = pickle.load(handle)
     xception_model = Xception(include_top=False, pooling="avg")
     # Extract the image file from the request
-    file = request.files['file']
+    file = request.body['file']
 
     # Save the image file to a local directory
     filename = 'temp.jpg'
